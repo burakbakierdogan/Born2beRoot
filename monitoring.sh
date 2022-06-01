@@ -16,6 +16,6 @@ wall "	#Architecture:$(uname -a)
 	#Connections TCP : $(ss -s | grep TCP: | awk '{print $4}' | sed 's/,/ /') ESTABLISHED
 	#User Log: $(w | awk ' NR>2 {print $0}' | wc -l)
 	#Network: IP $(ifconfig -a | grep -m 1 inet | awk '{print $2}') ($(ip addr show | grep link/ether | awk '{print $2}'))
-	#Sudo : 
+	#Sudo : $( grep --text sudo: /var/log/auth.log | wc -l) cmd
 	"
 
